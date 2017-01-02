@@ -1,6 +1,6 @@
 class TestSometsController < ApplicationController
   def index
-    @test_somets = TestSomet.all
+    @test_somets = TestSomet.page(params[:page]).per(10)
 
     render("test_somets/index.html.erb")
   end
